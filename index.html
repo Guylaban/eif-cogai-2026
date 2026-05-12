@@ -1,0 +1,1445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>EIF CogAI 2026 — Cognitive Science, Computational Modeling & AI · University of Oxford</title>
+<meta name="description" content="2nd Exploring Interdisciplinary Frontiers (EIF): Cognitive Science, Computational Modeling, and Artificial Intelligence. June 25–26, 2026, University of Oxford, UK." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --oxford:#002147;
+  --oxford-2:#0a3a7a;
+  --gold:#c8a548;
+  --gold-soft:#e8d291;
+  --ink:#0e1726;
+  --muted:#5b6577;
+  --line:#e6e8ee;
+  --bg:#fbfaf6;
+  --card:#ffffff;
+  --accent:#bf3a2b;
+  --shadow:0 1px 2px rgba(10,20,40,.04), 0 8px 24px rgba(10,20,40,.06);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:'Inter',system-ui,-apple-system,sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{font-family:'Fraunces',Georgia,serif;font-weight:600;letter-spacing:-0.01em;line-height:1.2;color:var(--oxford)}
+a{color:var(--oxford-2);text-decoration:none}
+a:hover{color:var(--accent)}
+img{max-width:100%;display:block}
+
+/* Top nav */
+.nav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(251,250,246,.92);
+  backdrop-filter:saturate(150%) blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{
+  max-width:1180px;margin:0 auto;padding:14px 24px;
+  display:flex;align-items:center;justify-content:space-between;gap:24px;
+}
+.brand{display:flex;align-items:center;gap:12px;font-weight:600;color:var(--oxford);font-family:'Fraunces',serif;font-size:18px}
+.crest.crest-img{
+  background:#fff;border-radius:8px;
+  padding:3px;object-fit:contain;display:block;
+  box-shadow:inset 0 0 0 1px rgba(0,33,71,.12), 0 1px 2px rgba(0,33,71,.08);
+}
+.brand .crest{
+  width:34px;height:34px;border-radius:8px;
+  background:linear-gradient(135deg,var(--oxford) 0%,var(--oxford-2) 100%);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--gold);font-weight:700;font-family:'Fraunces',serif;font-size:15px;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.1);
+}
+.nav-links{display:flex;gap:22px;font-size:14.5px}
+.nav-links a{color:var(--ink);font-weight:500}
+.nav-links a:hover{color:var(--accent)}
+.nav-cta{
+  display:inline-block;padding:9px 16px;border-radius:999px;
+  background:var(--oxford);color:#fff !important;font-weight:600;font-size:14px;
+}
+.nav-cta:hover{background:var(--accent);color:#fff !important}
+.menu-toggle{display:none;background:none;border:0;font-size:24px;color:var(--oxford);cursor:pointer}
+
+/* Hero */
+.hero{
+  position:relative;overflow:hidden;
+  background:#001a3a;
+  color:#f7f5ef;isolation:isolate;
+}
+.hero::before{
+  content:"";position:absolute;inset:0;z-index:0;
+  background:url('photos/oxford-bg.jpg') center/cover no-repeat;
+  filter:saturate(1.05) contrast(1.05);
+  animation:kenburns 28s ease-in-out infinite alternate;
+  transform-origin:center center;
+}
+.hero::after{
+  content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:
+    radial-gradient(1100px 600px at 80% -10%, rgba(200,165,72,.22), transparent 60%),
+    radial-gradient(900px 600px at -10% 100%, rgba(10,40,90,.55), transparent 60%),
+    linear-gradient(180deg, rgba(0,12,30,.55) 0%, rgba(0,33,71,.78) 60%, rgba(0,18,45,.92) 100%);
+}
+@keyframes kenburns{
+  0%{transform:scale(1.05) translate(0,0)}
+  50%{transform:scale(1.14) translate(-1.5%,-1%)}
+  100%{transform:scale(1.08) translate(1%,-1.5%)}
+}
+.hero > *{position:relative;z-index:2}
+@media (prefers-reduced-motion:reduce){
+  .hero::before{animation:none}
+}
+.hero-inner{
+  max-width:1180px;margin:0 auto;padding:96px 24px 110px;
+  display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:center;
+}
+.hero h1{
+  color:#fff;font-size:clamp(36px,5.2vw,62px);margin:0 0 18px;
+  font-weight:700;letter-spacing:-0.02em;
+}
+.hero h1 .small{display:block;font-size:0.42em;font-family:'Inter',sans-serif;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:14px}
+.hero p.lede{font-size:18px;color:#dfe6f1;max-width:60ch;margin:0 0 28px}
+.hero .meta{display:flex;flex-wrap:wrap;gap:14px 28px;margin-bottom:32px}
+.hero .meta div{display:flex;align-items:center;gap:8px;color:#e8e3d2;font-size:15px}
+.hero .meta svg{width:18px;height:18px;flex:0 0 auto;stroke:var(--gold-soft)}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:13px 22px;border-radius:999px;font-weight:600;font-size:14.5px;
+  border:1px solid transparent;transition:all .18s ease;cursor:pointer;
+}
+.btn-primary{background:var(--gold);color:var(--oxford) !important}
+.btn-primary:hover{background:#dab866;transform:translateY(-1px)}
+.btn-ghost{background:transparent;color:#fff !important;border-color:rgba(255,255,255,.35)}
+.btn-ghost:hover{background:rgba(255,255,255,.08);border-color:#fff}
+
+.hero-card{
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:18px;padding:28px;
+  backdrop-filter:blur(8px);
+}
+.hero-card h3{color:#fff;font-size:18px;margin:0 0 14px;font-family:'Inter',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.12em;font-size:12.5px;color:var(--gold-soft)}
+.countdown{display:flex;gap:18px;margin-bottom:24px}
+.countdown div{flex:1;text-align:center;background:rgba(0,0,0,.18);border-radius:12px;padding:14px 8px}
+.countdown .num{font-family:'Fraunces',serif;font-size:32px;font-weight:700;color:#fff;display:block;line-height:1}
+.countdown .lbl{font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:#c5cee0;margin-top:6px;display:block}
+.tagline-list{list-style:none;padding:0;margin:0;font-size:14px;color:#dfe6f1}
+.tagline-list li{padding:8px 0;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;gap:12px}
+.tagline-list li:first-child{border-top:0}
+.tagline-list strong{color:#fff;font-weight:600}
+
+/* Sections */
+section{padding:90px 24px;scroll-margin-top:80px}
+.container{max-width:1180px;margin:0 auto}
+.eyebrow{
+  display:inline-block;font-size:12.5px;text-transform:uppercase;letter-spacing:.18em;
+  color:var(--accent);font-weight:600;margin-bottom:12px;
+}
+.section-title{font-size:clamp(30px,3.8vw,44px);margin:0 0 16px}
+.section-lede{font-size:17px;color:var(--muted);max-width:65ch;margin:0 0 50px}
+
+/* About */
+.about-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:30px}
+.about-card{
+  background:var(--card);border:1px solid var(--line);border-radius:16px;padding:28px;
+  box-shadow:var(--shadow);transition:transform .2s ease, box-shadow .2s ease;
+}
+.about-card:hover{transform:translateY(-3px);box-shadow:0 12px 36px rgba(10,20,40,.09)}
+.about-card .icon{
+  width:42px;height:42px;border-radius:10px;background:linear-gradient(135deg,var(--oxford),var(--oxford-2));
+  display:flex;align-items:center;justify-content:center;color:var(--gold);margin-bottom:16px;
+}
+.about-card h3{font-size:19px;margin:0 0 8px}
+.about-card p{margin:0;color:var(--muted);font-size:15px}
+
+/* People grids */
+.people-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+  gap:24px;
+}
+.person{
+  background:var(--card);border:1px solid var(--line);border-radius:18px;
+  padding:0;display:flex;flex-direction:column;
+  box-shadow:var(--shadow);transition:transform .25s ease, box-shadow .25s ease;
+  overflow:hidden;text-decoration:none;color:inherit;
+  position:relative;
+}
+.person:hover{transform:translateY(-4px);box-shadow:0 18px 44px rgba(10,20,40,.13);text-decoration:none;color:inherit}
+.person:hover .read-more{color:var(--accent)}
+.person:hover .photo-wrap img{transform:scale(1.04)}
+.photo-wrap{
+  width:100%;aspect-ratio:4/5;background:linear-gradient(135deg,#0a3a7a,#1a5fad);
+  display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;
+}
+.photo-wrap img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  transition:transform .5s ease;z-index:2;
+}
+.photo-wrap .ini, .avatar .ini{display:none !important}
+.photo-wrap .ini{
+  font-family:'Fraunces',serif;font-size:64px;color:rgba(255,255,255,.9);font-weight:700;
+  position:relative;z-index:1;
+}
+.photo-wrap.g2{background:linear-gradient(135deg,#7a2c1f,#bf3a2b)}
+.photo-wrap.g3{background:linear-gradient(135deg,#3a6b3a,#69a069)}
+.photo-wrap.g4{background:linear-gradient(135deg,#5a3d8a,#8d63c4)}
+.photo-wrap.g5{background:linear-gradient(135deg,#a07c2e,#d4ad55)}
+.photo-wrap.g6{background:linear-gradient(135deg,#1f5e6b,#3da1b3)}
+.photo-wrap.g7{background:linear-gradient(135deg,#7a4030,#b86749)}
+.photo-wrap.g8{background:linear-gradient(135deg,#2e4d1f,#69955a)}
+.person-body{padding:22px 24px 24px;display:flex;flex-direction:column;gap:10px;flex:1}
+.person-body .role{margin:0}
+.avatar{
+  width:72px;height:72px;border-radius:50%;flex:0 0 auto;
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;font-weight:600;font-family:'Fraunces',serif;font-size:24px;
+  background:linear-gradient(135deg,#0a3a7a,#1a5fad);
+  border:3px solid #fff;box-shadow:0 4px 12px rgba(0,33,71,.15);
+  overflow:hidden;
+}
+.avatar{position:relative}
+.avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:50%;z-index:2}
+.avatar .ini{position:relative;z-index:1}
+.avatar.g2{background:linear-gradient(135deg,#7a2c1f,#bf3a2b)}
+.avatar.g3{background:linear-gradient(135deg,#3a6b3a,#69a069)}
+.avatar.g4{background:linear-gradient(135deg,#5a3d8a,#8d63c4)}
+.avatar.g5{background:linear-gradient(135deg,#a07c2e,#d4ad55)}
+.avatar.g6{background:linear-gradient(135deg,#1f5e6b,#3da1b3)}
+.avatar.g7{background:linear-gradient(135deg,#7a4030,#b86749)}
+.avatar.g8{background:linear-gradient(135deg,#2e4d1f,#69955a)}
+
+.person h3{margin:0;font-size:18px;color:var(--oxford);line-height:1.25}
+.person .affil{font-size:13.5px;color:var(--muted);margin-top:4px}
+.person .role{
+  display:inline-block;font-size:11.5px;text-transform:uppercase;letter-spacing:.12em;
+  color:var(--accent);font-weight:600;margin-top:6px;
+}
+.person .talk{
+  font-family:'Fraunces',serif;font-size:15.5px;color:var(--oxford);
+  font-style:italic;border-left:3px solid var(--gold);padding-left:12px;margin:4px 0 0;
+}
+.person .bio{font-size:14px;color:var(--ink);margin:0;line-height:1.55}
+
+
+.read-more{
+  margin-top:auto;padding-top:14px;
+  font-size:13px;font-weight:600;color:var(--oxford-2);
+  text-transform:uppercase;letter-spacing:.1em;
+  display:inline-flex;align-items:center;gap:6px;
+  transition:color .2s ease;
+}
+.read-more::after{content:"→";transition:transform .2s ease}
+.person:hover .read-more::after{transform:translateX(3px)}
+
+
+/* Neutral placeholder for missing photos (replaces initials) */
+.photo-wrap.no-photo{background:linear-gradient(135deg,#e8eaef 0%, #cfd4de 100%) !important}
+.photo-wrap.no-photo .ini, .avatar.no-photo .ini{display:none}
+.avatar.no-photo{background:linear-gradient(135deg,#e8eaef,#cfd4de) !important;position:relative}
+.avatar.no-photo::before{content:"";position:absolute;left:50%;top:35%;transform:translate(-50%,-50%);width:38%;aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.7)}
+.avatar.no-photo::after{content:"";position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:80%;height:50%;background:rgba(255,255,255,.7);border-radius:50% 50% 0 0}
+.photo-wrap.no-photo::before{
+  content:"";position:absolute;left:50%;top:38%;transform:translate(-50%,-50%);
+  width:34%;aspect-ratio:1;border-radius:50%;
+  background:rgba(255,255,255,.65);
+}
+.photo-wrap.no-photo::after{
+  content:"";position:absolute;left:50%;bottom:0;transform:translateX(-50%);
+  width:80%;height:50%;
+  background:rgba(255,255,255,.65);border-radius:50% 50% 0 0;
+}
+.person{position:relative}
+.person .ext-icon{
+  position:absolute;top:14px;right:14px;z-index:3;
+  width:32px;height:32px;border-radius:50%;
+  background:rgba(255,255,255,.92);color:var(--oxford);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 2px 8px rgba(0,0,0,.15);
+  transition:transform .25s ease, background .2s ease;
+}
+.person:hover .ext-icon{background:var(--gold);transform:scale(1.08)}
+.contributors{background:linear-gradient(180deg,#f4f1e8 0%, var(--bg) 100%)}
+.inst-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-top:30px;
+}
+.inst{
+  background:#fff;border:1px solid var(--line);border-radius:14px;
+  padding:22px 20px;display:flex;flex-direction:column;gap:6px;align-items:flex-start;
+  box-shadow:var(--shadow);transition:transform .2s ease, box-shadow .2s ease;
+  position:relative;overflow:hidden;
+}
+.inst:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(10,20,40,.10)}
+.inst::before{
+  content:"";position:absolute;left:0;top:0;bottom:0;width:4px;
+  background:linear-gradient(180deg,var(--oxford) 0%, var(--gold) 100%);
+}
+.inst .crest-mini{
+  width:44px;height:44px;border-radius:8px;
+  background:linear-gradient(135deg,var(--oxford),var(--oxford-2));
+  color:var(--gold);font-family:'Fraunces',serif;font-weight:700;font-size:13px;
+  display:flex;align-items:center;justify-content:center;margin-bottom:8px;
+  letter-spacing:.04em;
+}
+.inst h4{margin:0;font-size:15.5px;color:var(--oxford);line-height:1.3;font-family:'Fraunces',serif;font-weight:600}
+.inst p{margin:2px 0 0;font-size:12.5px;color:var(--muted);line-height:1.45}
+.venue-photos{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:680px){.venue-photos{grid-template-columns:1fr}}
+
+
+/* ===== Modal for speaker abstracts ===== */
+.modal-backdrop{
+  position:fixed;inset:0;background:rgba(0,12,30,.72);backdrop-filter:blur(6px);
+  z-index:100;display:none;align-items:flex-start;justify-content:center;padding:60px 20px;
+  overflow-y:auto;
+}
+.modal-backdrop.open{display:flex;animation:fadein .25s ease}
+@keyframes fadein{from{opacity:0}to{opacity:1}}
+.modal{
+  background:var(--bg);border-radius:20px;max-width:880px;width:100%;
+  box-shadow:0 30px 80px rgba(0,0,0,.4);
+  overflow:hidden;animation:slideup .3s ease;
+}
+@keyframes slideup{from{transform:translateY(20px);opacity:0}to{transform:none;opacity:1}}
+.modal-hero{
+  display:grid;grid-template-columns:240px 1fr;gap:0;
+}
+@media (max-width:680px){.modal-hero{grid-template-columns:1fr}.modal-hero .modal-photo{aspect-ratio:16/9}}
+.modal-photo{
+  background:linear-gradient(135deg,#0a3a7a,#1a5fad);position:relative;overflow:hidden;
+}
+.modal-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.modal-photo.no-photo{background:linear-gradient(135deg,#e8eaef,#cfd4de)}
+.modal-photo.no-photo::before{content:"";position:absolute;left:50%;top:38%;transform:translate(-50%,-50%);width:34%;aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.65)}
+.modal-photo.no-photo::after{content:"";position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:80%;height:50%;background:rgba(255,255,255,.65);border-radius:50% 50% 0 0}
+.modal-head{padding:32px 36px 16px;background:linear-gradient(180deg,#fff 0%, var(--bg) 100%)}
+.modal-head .role-tag{
+  display:inline-block;font-size:11.5px;text-transform:uppercase;letter-spacing:.16em;
+  color:var(--accent);font-weight:600;margin-bottom:6px;
+}
+.modal-head h2{font-size:26px;margin:0 0 4px;color:var(--oxford);font-family:'Fraunces',serif}
+.modal-head .modal-affil{font-size:14px;color:var(--muted);margin:0}
+.modal-body{padding:8px 36px 32px}
+.modal-body .talk-title{
+  font-family:'Fraunces',serif;font-size:18px;color:var(--oxford);
+  font-style:italic;border-left:3px solid var(--gold);padding-left:14px;margin:24px 0 18px;
+}
+.modal-body .abstract-label{font-size:12px;text-transform:uppercase;letter-spacing:.18em;color:var(--accent);font-weight:600;margin-bottom:8px}
+.modal-body .abstract{font-size:15.5px;line-height:1.7;color:var(--ink);margin:0}
+.modal-body .abstract.tbc{color:var(--muted);font-style:italic}
+.modal-body .modal-bio{margin-top:24px;font-size:14.5px;color:var(--ink);padding-top:20px;border-top:1px solid var(--line)}
+.modal-close{
+  position:absolute;top:18px;right:18px;width:40px;height:40px;border-radius:50%;
+  background:rgba(255,255,255,.95);border:0;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  font-size:22px;color:var(--ink);transition:transform .2s ease;
+  box-shadow:0 4px 12px rgba(0,0,0,.2);z-index:2;
+}
+.modal-close:hover{transform:rotate(90deg) scale(1.1);color:var(--accent)}
+
+/* ===== Cleaner no-photo placeholder (no letters) ===== */
+.photo-wrap.no-photo .ini, .avatar.no-photo .ini, .modal-photo.no-photo .ini{display:none !important}
+
+/* ===== Branded institution cards with their actual brand colors ===== */
+.inst{
+  background:#fff;border:1px solid var(--line);border-radius:14px;
+  padding:0;display:flex;flex-direction:column;gap:0;align-items:stretch;
+  box-shadow:var(--shadow);transition:transform .2s ease, box-shadow .2s ease;
+  position:relative;overflow:hidden;
+}
+.inst::before{display:none}
+.inst-mark{
+  height:110px;
+  background:#fff !important;
+  display:flex;align-items:center;justify-content:center;
+  border-bottom:1px solid var(--line);
+  padding:18px;
+}
+.inst-mark::before{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(circle at 30% 30%, rgba(255,255,255,.18), transparent 60%);
+}
+.inst-mark .mono{font-size:36px;position:relative;z-index:1;line-height:1}
+.inst-mark .sub{font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-family:'Inter',sans-serif;font-weight:600;opacity:.9;position:relative;z-index:1;margin-top:4px}
+.inst-mark .stack{display:flex;flex-direction:column;align-items:center;gap:0}
+.inst-body{padding:18px 18px 20px}
+.inst h4{margin:0;font-size:15px;color:var(--oxford);line-height:1.3;font-family:'Fraunces',serif;font-weight:600}
+.inst p{margin:4px 0 0;font-size:12.5px;color:var(--muted);line-height:1.45}
+
+
+
+
+
+.inst-mark{
+  height:110px;
+  background:#fff !important;
+  display:flex;align-items:center;justify-content:center;
+  border-bottom:1px solid var(--line);
+  padding:18px;
+}
+.inst-mark .logo-img{
+  max-width:100%;max-height:74px;width:auto;height:auto;
+  object-fit:contain;display:block;
+  filter:drop-shadow(0 1px 2px rgba(0,0,0,.04));
+}
+
+/* University brand colors (kept as fallback) */
+.brand-oxford{background:linear-gradient(135deg,#002147 0%,#0a3a7a 100%)}
+.brand-cambridge{background:linear-gradient(135deg,#A3C1AD 0%,#B8D2C0 100%);color:#1a3a2e !important;text-shadow:none !important}
+.brand-cambridge .mono,.brand-cambridge .sub{color:#1a3a2e !important;text-shadow:none !important}
+.brand-surrey{background:linear-gradient(135deg,#000091 0%,#0033A0 100%)}
+.brand-sheffield{background:linear-gradient(135deg,#9BD7E5 0%,#69BFD8 100%);color:#003c71 !important;text-shadow:none !important}
+.brand-sheffield .mono,.brand-sheffield .sub{color:#003c71 !important;text-shadow:none !important}
+.brand-glasgow{background:linear-gradient(135deg,#003865 0%,#005599 100%)}
+.brand-kcl{background:linear-gradient(135deg,#9E1B32 0%,#C8385A 100%)}
+.brand-tue{background:linear-gradient(135deg,#C8102E 0%,#E63946 100%)}
+.brand-bath{background:linear-gradient(135deg,#000048 0%,#1a1a8a 100%)}
+.brand-birmingham{background:linear-gradient(135deg,#11283b 0%,#2c4f70 100%)}
+.brand-loughborough{background:linear-gradient(135deg,#702082 0%,#8d2ba1 100%)}
+.brand-swansea{background:linear-gradient(135deg,#A6093D 0%,#C8254F 100%)}
+.brand-bgu{background:linear-gradient(135deg,#005b8b 0%,#0080c4 100%)}
+.brand-crick{background:linear-gradient(135deg,#1A1A1A 0%,#3a3a3a 100%)}
+.brand-nature{background:linear-gradient(135deg,#003366 0%,#006699 100%)}
+
+
+/* Journal masthead badges on editor cards */
+
+.j-mast{
+  display:inline-flex;flex-direction:column;
+  background:#0b0b0b;color:#fff;
+  padding:10px 18px 8px;border-radius:6px;
+  margin:14px 0 6px;align-self:flex-start;
+  box-shadow:0 3px 10px rgba(0,0,0,.22);
+  line-height:1;
+}
+.j-mast .j-nat{
+  font-family:'Fraunces',Georgia,serif;
+  font-weight:700;font-size:22px;
+  letter-spacing:.005em;color:#ffffff;
+}
+.j-mast .j-sub{
+  margin-top:5px;font-family:'Inter',sans-serif;
+  font-size:10.5px;font-weight:600;
+  letter-spacing:.16em;text-transform:uppercase;
+  color:#e8c97a;
+}
+
+
+
+
+/* Smaller cards for organizers list */
+.org-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:22px;margin-top:26px}
+.org-mini{
+  background:var(--card);border:1px solid var(--line);border-radius:16px;
+  padding:22px 24px;display:flex;align-items:center;gap:18px;
+  box-shadow:var(--shadow);transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  text-decoration:none;color:inherit;
+}
+.org-mini:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(10,20,40,.10);border-color:var(--oxford-2);text-decoration:none;color:inherit}
+.org-mini:hover h4{color:var(--accent)}
+.org-mini .avatar{width:72px;height:72px;font-size:22px;flex:0 0 72px}
+.org-mini h4{margin:0;font-size:17px;color:var(--oxford);line-height:1.25;font-family:'Fraunces',serif;font-weight:600}
+.org-mini p{margin:3px 0 0;font-size:13.5px;color:var(--muted);line-height:1.45}
+
+/* Subsection heading */
+.sub-h{font-size:22px;margin:50px 0 20px;color:var(--oxford);font-family:'Fraunces',serif;display:flex;align-items:center;gap:14px}
+.sub-h-lg{font-size:28px;margin-top:60px}
+.sub-h::before{content:"";flex:0 0 28px;height:2px;background:var(--gold)}
+
+/* Schedule */
+
+.session strong{color:var(--oxford);font-weight:600}
+.session.keynote{background:linear-gradient(90deg,rgba(200,165,72,.08),transparent 60%);margin:0 -14px;padding-left:14px;padding-right:14px;border-radius:8px}
+.session.keynote .time{color:var(--accent)}
+.session.panel{background:linear-gradient(90deg,rgba(10,58,122,.07),transparent 60%);margin:0 -14px;padding-left:14px;padding-right:14px;border-radius:8px}
+.session.dinner{background:linear-gradient(90deg,rgba(191,58,43,.08),transparent 60%);margin:0 -14px;padding-left:14px;padding-right:14px;border-radius:8px}
+
+.schedule{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:30px}
+.day-card{
+  background:var(--card);border:1px solid var(--line);border-radius:16px;
+  padding:32px;box-shadow:var(--shadow);
+}
+.day-card .day-label{
+  font-size:12px;text-transform:uppercase;letter-spacing:.18em;color:var(--accent);font-weight:600;
+}
+.day-card h3{font-size:24px;margin:6px 0 6px}
+.day-card .day-date{color:var(--muted);font-size:14px;margin-bottom:20px}
+.session{
+  display:flex;gap:14px;padding:14px 0;border-top:1px solid var(--line);
+}
+.session:first-of-type{border-top:0;padding-top:6px}
+.session .time{
+  font-family:'Fraunces',serif;font-weight:600;color:var(--oxford);font-size:15px;
+  flex:0 0 80px;
+}
+.session .what{font-size:14.5px;color:var(--ink)}
+.session .what em{color:var(--muted);font-size:13px;display:block;font-style:normal;margin-top:2px}
+
+/* Submission / venue strip */
+
+.submit-btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
+.submit-btns .btn{padding:14px 22px;align-items:center}
+.btn-stack{display:flex;flex-direction:column;align-items:flex-start;gap:3px;line-height:1.1;text-align:left}
+.btn-stack .btn-main{font-size:14.5px;font-weight:600}
+.btn-stack .btn-sub{font-size:11px;font-weight:500;opacity:.78;letter-spacing:.05em;text-transform:uppercase}
+.btn-alt{background:rgba(255,255,255,.08) !important;border-color:rgba(255,255,255,.45) !important}
+.btn-alt:hover{background:rgba(255,255,255,.14) !important;border-color:#fff !important}
+
+.strip{
+  background:linear-gradient(135deg,var(--oxford) 0%, var(--oxford-2) 100%);
+  color:#fff;border-radius:20px;padding:48px;
+  display:grid;grid-template-columns:1.4fr 1fr;gap:40px;align-items:center;
+  position:relative;overflow:hidden;
+}
+.strip::before{
+  content:"";position:absolute;right:-80px;top:-80px;width:340px;height:340px;border-radius:50%;
+  background:radial-gradient(circle,rgba(200,165,72,.25),transparent 70%);
+}
+.strip h3{color:#fff;font-size:30px;margin:0 0 12px}
+.strip p{color:#dfe6f1;margin:0 0 22px;font-size:16px}
+.strip-dates{display:grid;grid-template-columns:1fr 1fr;gap:16px;position:relative;z-index:1}
+.strip-dates div{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:18px}
+.strip-dates .lbl{font-size:11.5px;text-transform:uppercase;letter-spacing:.16em;color:var(--gold-soft);margin-bottom:6px}
+.strip-dates .val{font-family:'Fraunces',serif;font-size:17px;color:#fff;font-weight:600}
+
+/* Topics */
+.topics{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.topic{
+  background:#fff;border:1px solid var(--line);padding:9px 16px;border-radius:999px;
+  font-size:13.5px;color:var(--oxford);font-weight:500;
+}
+
+/* Venue */
+.venue{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center;margin-top:30px}
+.venue-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:32px;box-shadow:var(--shadow)}
+.venue-card h3{margin-top:0}
+.venue-card ul{list-style:none;padding:0;margin:14px 0 0}
+.venue-card li{padding:10px 0;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:14px;font-size:14.5px}
+.venue-card li:first-child{border-top:0}
+.venue-card li strong{color:var(--oxford);font-weight:600}
+.venue-media{display:grid;grid-template-rows:1fr 1fr;gap:16px}
+.venue-photo{
+  border-radius:16px;height:240px;overflow:hidden;position:relative;
+  box-shadow:var(--shadow);
+}
+.venue-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.venue-photo .caption{
+  position:absolute;left:14px;bottom:14px;z-index:2;
+  background:rgba(255,255,255,.92);padding:8px 14px;border-radius:8px;
+  font-family:'Fraunces',serif;font-size:14px;font-weight:600;color:var(--oxford);
+  box-shadow:0 4px 12px rgba(0,0,0,.15);
+}
+.venue-map{
+  border-radius:16px;height:240px;overflow:hidden;
+  box-shadow:var(--shadow);border:1px solid var(--line);
+}
+.venue-map iframe{width:100%;height:100%;border:0;display:block}
+
+
+/* Registration fees table */
+.fees-wrap{margin-top:30px}
+.fees-tabs{display:flex;gap:8px;margin-bottom:18px;flex-wrap:wrap}
+.fees-tab{
+  padding:9px 18px;border-radius:999px;cursor:pointer;
+  background:#fff;border:1px solid var(--line);font-size:13.5px;font-weight:600;color:var(--ink);
+  transition:all .15s ease;
+}
+.fees-tab:hover{border-color:var(--oxford)}
+.fees-tab.active{background:var(--oxford);color:#fff;border-color:var(--oxford)}
+.fees-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media (max-width:680px){.fees-grid{grid-template-columns:1fr}}
+.fees-card{
+  background:var(--card);border:1px solid var(--line);border-radius:14px;
+  padding:24px 26px;box-shadow:var(--shadow);
+}
+.fees-card h4{margin:0 0 4px;font-size:18px;color:var(--oxford)}
+.fees-card .when{font-size:12.5px;color:var(--accent);font-weight:600;
+  text-transform:uppercase;letter-spacing:.12em;margin-bottom:14px;display:block}
+.fees-row{display:flex;justify-content:space-between;padding:9px 0;border-top:1px solid var(--line);font-size:14.5px}
+.fees-row:first-of-type{border-top:0}
+.fees-row .price{font-family:'Fraunces',serif;font-weight:600;color:var(--oxford)}
+.fees-note{margin-top:14px;padding-top:14px;border-top:1px solid var(--line);
+  font-size:13px;color:var(--muted);line-height:1.5}
+.fees-pane{display:none}
+.fees-pane.active{display:block}
+
+/* Two-column info row (submission + visa side by side optionally) */
+.info-row{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:34px}
+@media (max-width:900px){.info-row{grid-template-columns:1fr}}
+.info-block{
+  background:var(--card);border:1px solid var(--line);border-radius:16px;
+  padding:30px 32px;box-shadow:var(--shadow);
+}
+.info-block h3{margin:0 0 12px;font-size:22px;color:var(--oxford)}
+.info-block p{margin:0 0 12px;font-size:14.5px;color:var(--ink)}
+.info-block ul{margin:8px 0 14px 0;padding-left:18px;font-size:14px;color:var(--ink)}
+.info-block li{margin:3px 0}
+.info-block .contact-line{
+  margin-top:14px;padding-top:14px;border-top:1px solid var(--line);
+  font-size:13.5px;color:var(--muted);
+}
+.info-block .contact-line strong{color:var(--oxford);font-weight:600}
+.info-block a{color:var(--oxford-2);font-weight:500}
+.info-block a:hover{color:var(--accent)}
+
+/* Key deadlines pills */
+.deadlines{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 8px}
+.deadline-pill{
+  background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);
+  border-radius:10px;padding:10px 14px;
+  font-size:13px;line-height:1.3;
+  backdrop-filter:blur(4px);
+}
+.deadline-pill .d-lbl{display:block;font-size:11px;font-weight:600;
+  text-transform:uppercase;letter-spacing:.14em;color:var(--gold-soft);margin-bottom:4px}
+.deadline-pill .d-val{font-family:'Fraunces',serif;font-weight:600;color:#fff;font-size:14.5px}
+
+/* Footer */
+footer{
+  background:var(--oxford);color:#c5cee0;padding:60px 24px 30px;margin-top:40px;
+}
+.footer-inner{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px}
+footer h4{color:#fff;font-family:'Fraunces',serif;font-size:18px;margin:0 0 14px}
+footer a{color:#c5cee0}
+footer a:hover{color:var(--gold-soft)}
+footer ul{list-style:none;padding:0;margin:0}
+footer li{padding:5px 0;font-size:14px}
+.footer-bot{
+  max-width:1180px;margin:40px auto 0;padding-top:24px;border-top:1px solid rgba(255,255,255,.18);
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;
+  font-size:13px;color:#e8edf6;
+}
+.footer-bot span{color:#f1f3f8}
+
+/* Responsive */
+@media (max-width:900px){
+  .hero-inner{grid-template-columns:1fr;padding:72px 24px 80px}
+  .about-grid{grid-template-columns:1fr}
+  .schedule{grid-template-columns:1fr}
+  .strip{grid-template-columns:1fr;padding:36px}
+  .venue{grid-template-columns:1fr}
+  .footer-inner{grid-template-columns:1fr}
+  .nav-links{display:none}
+  .nav-links.open{display:flex;flex-direction:column;position:absolute;top:64px;left:0;right:0;background:#fff;padding:18px 24px;border-bottom:1px solid var(--line)}
+  .menu-toggle{display:block}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top">
+      <img class="crest crest-img" src="logos/eif.png" alt="EIF" />
+      <span>EIF&nbsp;CogAI&nbsp;<strong style="color:var(--accent)">2026</strong></span>
+    </a>
+    <button class="menu-toggle" aria-label="menu" onclick="document.getElementById('nl').classList.toggle('open')">☰</button>
+    <div class="nav-links" id="nl">
+      <a href="#about">About</a>
+      <a href="#keynotes">Keynotes</a>
+      <a href="#panels">Panels</a>
+      <a href="#organizers">Organizers</a>
+      <a href="#schedule">Schedule</a>
+      <a href="#registration">Registration</a>
+      <a href="#contributors">Institutions</a>
+      <a href="#venue">Venue</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSe6W0B7wccJA-fIohUAqv5oWJyibx682R0SwqbozmH0lmExQg/viewform" target="_blank" rel="noopener" class="nav-cta">Submit Abstract</a>
+    </div>
+  </div>
+</nav>
+
+<header id="top" class="hero">
+  <div class="hero-inner">
+    <div>
+      <h1>
+        <span class="small">2nd Exploring Interdisciplinary Frontiers</span>
+        Cognitive Science, Computational Modeling &amp; Artificial Intelligence
+      </h1>
+      <p class="lede">
+        Where cognitive neuroscience inspires the next generation of AI — and AI, in turn, accelerates scientific discovery. Two days of keynotes, panels, peer-reviewed talks, and dedicated mentoring at the heart of Oxford.
+      </p>
+      <div class="meta">
+        <div><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> 25–26 June 2026</div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> The Newman Rooms, University of Oxford, UK</div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></svg> Hybrid (in-person &amp; online)</div>
+      </div>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSe6W0B7wccJA-fIohUAqv5oWJyibx682R0SwqbozmH0lmExQg/viewform" target="_blank" rel="noopener">Submit your abstract →</a>
+        <a class="btn btn-ghost" href="#keynotes">Meet the speakers</a>
+      </div>
+    </div>
+
+    <aside class="hero-card">
+      <h3>Conference at a glance</h3>
+      <div class="countdown">
+        <div><span class="num">2</span><span class="lbl">Days</span></div>
+        <div><span class="num">8</span><span class="lbl">Keynotes</span></div>
+        <div><span class="num">2</span><span class="lbl">Panels</span></div>
+      </div>
+      <ul class="tagline-list">
+        <li><span>Format</span><strong>Hybrid</strong></li>
+        <li><span>Abstracts</span><strong>Open now</strong></li>
+        <li><span>Registration</span><strong>Coming soon</strong></li>
+        <li><span>Formal dinner</span><strong>Booking soon</strong></li>
+      </ul>
+    </aside>
+  </div>
+</header>
+
+<section id="about">
+  <div class="container">
+    <span class="eyebrow">About the conference</span>
+    <h2 class="section-title">An interdisciplinary frontier between minds and machines</h2>
+    <p class="section-lede">
+      EIF CogAI 2026 brings together cognitive neuroscience, AI, robotics, psychology, philosophy, and computer science to build sustainable research networks across the UK and EU. The programme is designed to support early-career researchers, foster collaborative funding (ERC, UKRI), and open meaningful industry–academia dialogue.
+    </p>
+
+    <div class="about-grid">
+      <div class="about-card">
+        <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 014 4v1a4 4 0 01-4 4 4 4 0 01-4-4V6a4 4 0 014-4z"/><path d="M3 22a9 9 0 0118 0"/></svg></div>
+        <h3>Interdisciplinary by design</h3>
+        <p>Talks and panels intentionally cross neuroscience, machine learning, HCI, and the philosophy of cognition — not as silos, but as a single research conversation.</p>
+      </div>
+      <div class="about-card">
+        <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l2-2 4 4 8-8 4 4"/></svg></div>
+        <h3>Built for early-career scholars</h3>
+        <p>Mentorship sessions, journal-editor panels, and ERC grantee Q&amp;A help PhDs and postdocs translate ideas into publications and competitive funding bids.</p>
+      </div>
+      <div class="about-card">
+        <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M2 12h20M12 3a14 14 0 010 18M12 3a14 14 0 000 18"/></svg></div>
+        <h3>UK ⇄ EU partnerships</h3>
+        <p>A deliberate focus on rebuilding research bridges between UK and European institutions, with a hybrid format welcoming international participation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contributors" class="contributors">
+  <div class="container">
+    <span class="eyebrow">Contributing institutions</span>
+    <h2 class="section-title">Researchers from across the UK, Europe and beyond</h2>
+    <p class="section-lede">
+      EIF CogAI 2026 is shaped by speakers, panellists and organisers from these universities and institutes.
+    </p>
+    <div class="inst-grid">
+      <div class="inst"><div class="inst-mark"><img class="logo-img" src="logos/oxford.png" alt="University of Oxford logo"></div><div class="inst-body"><h4>University of Oxford</h4><p>Nuffield Dept. of Clinical Neurosciences &middot; Dept. of Experimental Psychology</p></div></div>
+      <div class="inst"><div class="inst-mark"><img class="logo-img" src="logos/cambridge.png" alt="University of Cambridge logo"></div><div class="inst-body"><h4>University of Cambridge</h4><p>Department of Psychiatry &middot; MRC Cognition and Brain Sciences Unit</p></div></div>
+      <div class="inst"><div class="inst-mark"><img class="logo-img" src="logos/bgu.png" alt="Ben-Gurion University of the Negev logo"></div><div class="inst-body"><h4>Ben-Gurion University of the Negev</h4><p>Industrial Engineering &amp; Management</p></div></div>
+      <div class="inst"><div class="inst-mark"><img class="logo-img" src="logos/surrey.png" alt="University of Surrey logo"></div><div class="inst-body"><h4>University of Surrey</h4><p>School of Psychology &middot; Surrey Institute for People-Centred AI</p></div></div>
+      <div class="inst"><div class="inst-mark"><img class="logo-img" src="logos/sheffield.png" alt="University of Sheffield logo"></div><div class="inst-body"><h4>University of Sheffield</h4><p>Computer Science &middot; Sheffield Institute for Translational Neuroscience</p></div></div>
+      <div class="inst"><div class="inst-mark"><img class="logo-img" src="logos/glasgow.png" alt="University of Glasgow logo"></div><div class="inst-body"><h4>University of Glasgow</h4><p>Computing Science &middot; Psychology &amp; Neuroscience</p></div></div>
+      <div class="inst"><div class="inst-mark"><img class="logo-img" src="logos/tue.png" alt="Eindhoven University of Technology logo"></div><div class="inst-body"><h4>Eindhoven University of Technology</h4><p>Industrial Engineering &amp; Innovation Sciences</p></div></div>
+      <div class="inst"><div class="inst-mark"><img class="logo-img" src="logos/bath.png" alt="University of Bath logo"></div><div class="inst-body"><h4>University of Bath</h4><p>Department of Computer Science</p></div></div>
+      <div class="inst"><div class="inst-mark"><img class="logo-img" src="logos/loughborough.png" alt="Loughborough University logo"></div><div class="inst-body"><h4>Loughborough University</h4><p>Department of Computer Science</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="keynotes" style="background:linear-gradient(180deg,#f4f1e8 0%, var(--bg) 100%)">
+  <div class="container">
+    <span class="eyebrow">Keynote speakers</span>
+    <h2 class="section-title">Eight perspectives on the future of cognition &amp; AI</h2>
+    <p class="section-lede">
+      From brain stimulation and prosthetic embodiment to animal-computer interaction and multi-omics modelling — our keynotes traverse the full breadth of cognitive AI research.
+    </p>
+
+    <div class="people-grid">
+
+      <a class="person" href="#abstract-roi-cohen-kadosh" data-abstract="roi-cohen-kadosh" rel="noopener">
+  <span class="ext-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+  <div class="photo-wrap g1"><img src="photos/cohen-kadosh.jpg" alt="" onerror="this.remove()"></div>
+  <div class="person-body">
+    <h3>Prof. Roi Cohen Kadosh</h3>
+    <div class="affil">University of Surrey, UK</div>
+    <span class="role">Keynote</span>
+    <p class="talk">Beyond Explanation: Engineering Cognition through AI and Neurostimulation</p>
+        <p class="bio">Cognitive neuroscientist and Head of the School of Psychology at Surrey. Pioneer of AI-driven personalisation of cognitive interventions including non-invasive brain stimulation. 200+ publications spanning learning, attention, and lifespan cognitive performance.</p>
+    <span class="read-more">Read full abstract</span>
+  </div>
+</a>
+
+      <a class="person" href="#abstract-tamar-makin" data-abstract="tamar-makin" rel="noopener">
+  <span class="ext-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+  <div class="photo-wrap g2"><img src="photos/makin.jpg" alt="" onerror="this.remove()"></div>
+  <div class="person-body">
+    <h3>Prof. Tamar Makin</h3>
+    <div class="affil">University of Cambridge, UK</div>
+    <span class="role">Keynote</span>
+    <p class="talk">Homo Cyberneticus: Neurocognitive embodiment of artificial limbs</p>
+        <p class="bio">Professor of Cognitive Neuroscience and head of the Plasticity Lab. Investigates how brain plasticity can be harnessed to enhance motor function, supported by the ERC, Wellcome Trust, and UK research councils.</p>
+    <span class="read-more">Read full abstract</span>
+  </div>
+</a>
+
+      <a class="person" href="#abstract-ilyena-hirskyj-douglas" data-abstract="ilyena-hirskyj-douglas" rel="noopener">
+  <span class="ext-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+  <div class="photo-wrap g3"><img src="photos/hirskyj-douglas.jpg" alt="" onerror="this.remove()"></div>
+  <div class="person-body">
+    <h3>Dr. Ilyena Hirskyj-Douglas</h3>
+    <div class="affil">University of Glasgow, UK</div>
+    <span class="role">Keynote</span>
+    <p class="talk">Opportunities and pitfalls in animal-computing for cognitive science</p>
+        <p class="bio">Assistant Professor leading the Animal-Computer Interaction Group and ERC Starter Grant holder (FUTUREFAUNA). Builds technology that gives animals choice and agency over their own lives — featured in the New York Times and a Netflix documentary.</p>
+    <span class="read-more">Read full abstract</span>
+  </div>
+</a>
+
+      <a class="person" href="#abstract-letizia-gionfrida" data-abstract="letizia-gionfrida" rel="noopener">
+  <span class="ext-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+  <div class="photo-wrap g4"><img src="photos/gionfrida.jpg" alt="" onerror="this.remove()"></div>
+  <div class="person-body">
+    <h3>Dr. Letizia Gionfrida</h3>
+    <div class="affil">King's College London, UK</div>
+    <span class="role">Keynote</span>
+    <p class="talk">Human-in-the-Loop Optimization for HRI</p>
+        <p class="bio">Assistant Professor leading the Vision in Human Robotics Lab. Royal Academy of Engineering Research Fellow and Philip Leverhulme Prize recipient, working at the intersection of bio-inspired robotics and human-centred AI.</p>
+    <span class="read-more">Read full abstract</span>
+  </div>
+</a>
+
+      <a class="person" href="#abstract-tony-prescott" data-abstract="tony-prescott" rel="noopener">
+  <span class="ext-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+  <div class="photo-wrap g5"><img src="photos/prescott.jpg" alt="" onerror="this.remove()"></div>
+  <div class="person-body">
+    <h3>Prof. Tony Prescott</h3>
+    <div class="affil">University of Sheffield, UK</div>
+    <span class="role">Keynote</span>
+    <p class="talk">Title to be confirmed</p>
+        <p class="bio">Professor of Cognitive Robotics, internationally recognised for work bridging biological and artificial intelligence and for leading research on biomimetic robotics and embodied cognition.</p>
+    <span class="read-more">Read full abstract</span>
+  </div>
+</a>
+
+      <a class="person" href="#abstract-max-birk" data-abstract="max-birk" rel="noopener">
+  <span class="ext-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+  <div class="photo-wrap g6"><img src="photos/birk.jpg" alt="" onerror="this.remove()"></div>
+  <div class="person-body">
+    <h3>Dr. Max Birk</h3>
+    <div class="affil">Eindhoven University of Technology, Netherlands</div>
+    <span class="role">Keynote</span>
+    <p class="talk">Title to be confirmed</p>
+        <p class="bio">Associate Professor of Human-Technology Interaction and ERC Starting Grant recipient (GAMECHAR). Combines psychology, interaction design, and game design to study motivation and behaviour change.</p>
+    <span class="read-more">Read full abstract</span>
+  </div>
+</a>
+
+      <a class="person" href="#abstract-georgios-baskozos" data-abstract="georgios-baskozos" rel="noopener">
+  <span class="ext-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+  <div class="photo-wrap g7"><img src="photos/baskozos.jpg" alt="" onerror="this.remove()"></div>
+  <div class="person-body">
+    <h3>Dr. Georgios Baskozos</h3>
+    <div class="affil">University of Oxford, UK</div>
+    <span class="role">Keynote</span>
+    <p class="talk">Multi-omics integration and statistical modelling to better understand chronic pain and neuropathy</p>
+        <p class="bio">Bioinformatician and Associate Professor in the Nuffield Department of Clinical Neurosciences. Develops omics-data pipelines focused on the molecular mechanisms of neuropathic pain.</p>
+    <span class="read-more">Read full abstract</span>
+  </div>
+</a>
+
+      <a class="person" href="#abstract-lewis-hotchkiss" data-abstract="lewis-hotchkiss" rel="noopener">
+  <span class="ext-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+  <div class="photo-wrap g8"><img src="photos/hotchkiss.jpg" alt="" onerror="this.remove()"></div>
+  <div class="person-body">
+    <h3>Lewis Hotchkiss</h3>
+    <div class="affil">Swansea University, UK</div>
+    <span class="role">Keynote</span>
+    <p class="talk">Title to be confirmed</p>
+        <p class="bio">Researcher at Swansea University working at the interface of computational modelling and cognitive science. Full bio to be announced.</p>
+    <span class="read-more">Read full abstract</span>
+  </div>
+</a>
+
+    </div>
+  </div>
+</section>
+
+<section id="panels">
+  <div class="container">
+    <span class="eyebrow">Panels &amp; mentoring</span>
+    <h2 class="section-title">Funding and publishing, demystified</h2>
+    <p class="section-lede">
+      Two dedicated panels — one with European Research Council grantees, one with editors from the Nature family — give early-career researchers direct access to the people who shape funding and publication decisions.
+    </p>
+
+    <h3 class="sub-h">European Research Council Grantee Panel</h3>
+    <div class="people-grid">
+      <a class="person" href="#abstract-roi-cohen-kadosh-erc" data-abstract="roi-cohen-kadosh-erc">
+        <span class="ext-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        <div class="photo-wrap g1"><img src="photos/cohen-kadosh.jpg" alt="" onerror="this.remove()"></div>
+        <div class="person-body">
+          <h3>Prof. Roi Cohen Kadosh</h3>
+          <div class="affil">University of Surrey</div>
+          <span class="role">ERC StG · Advanced Grant Panel Chair</span>
+          <p class="bio">Has held both an ERC Starting Grant and chaired ERC Advanced Grant panels — speaks to the full lifecycle of EU-funded careers.</p>
+          <span class="read-more">Read panel role</span>
+        </div>
+      </a>
+      <a class="person" href="#abstract-tamar-makin-erc" data-abstract="tamar-makin-erc">
+        <span class="ext-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        <div class="photo-wrap g2"><img src="photos/makin.jpg" alt="" onerror="this.remove()"></div>
+        <div class="person-body">
+          <h3>Prof. Tamar Makin</h3>
+          <div class="affil">Plasticity Lab, Cambridge</div>
+          <span class="role">ERC StG / Consolidator Grantee</span>
+          <p class="bio">Multiple ERC awards across career stages. Will share lessons on framing high-risk, high-gain proposals on plasticity and embodiment.</p>
+          <span class="read-more">Read panel role</span>
+        </div>
+      </a>
+      <a class="person" href="#abstract-ilyena-hirskyj-douglas-erc" data-abstract="ilyena-hirskyj-douglas-erc">
+        <span class="ext-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        <div class="photo-wrap g3"><img src="photos/hirskyj-douglas.jpg" alt="" onerror="this.remove()"></div>
+        <div class="person-body">
+          <h3>Dr. Ilyena Hirskyj-Douglas</h3>
+          <div class="affil">School of Computing, Glasgow</div>
+          <span class="role">ERC Starting Grant Holder</span>
+          <p class="bio">Recent ERC Starting Grant recipient (FUTUREFAUNA). Will discuss writing competitive proposals from a new and unconventional research area.</p>
+          <span class="read-more">Read panel role</span>
+        </div>
+      </a>
+      <a class="person" href="#abstract-max-birk-erc" data-abstract="max-birk-erc">
+        <span class="ext-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        <div class="photo-wrap g6"><img src="photos/birk.jpg" alt="" onerror="this.remove()"></div>
+        <div class="person-body">
+          <h3>Dr. Max Birk</h3>
+          <div class="affil">Eindhoven University of Technology</div>
+          <span class="role">ERC Starting Grant Holder</span>
+          <p class="bio">ERC StG recipient (GAMECHAR). Brings the perspective of a Dutch host institution and human–technology interaction framing.</p>
+          <span class="read-more">Read panel role</span>
+        </div>
+      </a>
+    </div>
+
+    <h3 class="sub-h">Journal Editor Panel</h3>
+    <div class="people-grid">
+      <a class="person" href="#abstract-liesbeth-venema" data-abstract="liesbeth-venema">
+        <span class="ext-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        <div class="photo-wrap g4"><img src="photos/venema.jpg" alt="" onerror="this.remove()"></div>
+        <div class="person-body">
+          <h3>Dr. Liesbeth Venema</h3>
+          <div class="affil">Chief Editor, <em>Nature Machine Intelligence</em></div>
+          <span class="role">Editor Panel</span>
+          <span class="j-mast"><span class="j-nat">Nature</span><span class="j-sub">Machine Intelligence</span></span>
+          <p class="bio">PhD in applied physics from Delft. Joined Nature in 2000 and has focused on AI research since 2017, shaping one of the most read journals in the field.</p>
+          <span class="read-more">Read editor profile</span>
+        </div>
+      </a>
+      <a class="person" href="#abstract-jamie-horder" data-abstract="jamie-horder">
+        <span class="ext-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        <div class="photo-wrap g5"><img src="photos/horder.jpg" alt="" onerror="this.remove()"></div>
+        <div class="person-body">
+          <h3>Dr. Jamie Horder</h3>
+          <div class="affil">Senior Editor, <em>Nature Human Behaviour</em></div>
+          <span class="role">Editor Panel</span>
+          <span class="j-mast"><span class="j-nat">Nature</span><span class="j-sub">Human Behaviour</span></span>
+          <p class="bio">Cognitive neuroscientist by training — Oxford PhD on depression, postdoctoral work on autism at King's College London — now commissioning behavioural-science research at Nature.</p>
+          <span class="read-more">Read editor profile</span>
+        </div>
+      </a>
+      <a class="person" href="#abstract-henrietta-howells" data-abstract="henrietta-howells">
+        <span class="ext-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        <div class="photo-wrap g7"><img src="photos/howells.jpg" alt="" onerror="this.remove()"></div>
+        <div class="person-body">
+          <h3>Dr. Henrietta Howells</h3>
+          <div class="affil">Senior Editor, <em>Nature Neuroscience</em></div>
+          <span class="role">Editor Panel</span>
+          <span class="j-mast"><span class="j-nat">Nature</span><span class="j-sub">Neuroscience</span></span>
+          <p class="bio">PhD in neuroimaging from King's College London with postdoctoral research at the University of Milan combining neuroimaging and brain stimulation.</p>
+          <span class="read-more">Read editor profile</span>
+        </div>
+</a>
+    </div>
+  </div>
+</section>
+
+<section id="organizers" style="background:linear-gradient(180deg,#f4f1e8 0%, var(--bg) 100%)">
+  <div class="container">
+    <span class="eyebrow">Organizing committee</span>
+    <h2 class="section-title">The team behind EIF CogAI 2026</h2>
+    <p class="section-lede">
+      A consortium of researchers across Oxford, Cambridge, Surrey, Eindhoven, Ben-Gurion University and beyond — bringing together cognitive science, AI, and human-robot interaction expertise.
+    </p>
+
+    <h3 class="sub-h">Leadership</h3>
+    <div class="people-grid">
+      <a class="person" href="https://www.clarehall.cam.ac.uk/directory/su/" target="_blank" rel="noopener">
+  <span class="ext-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+  <div class="photo-wrap g1"><img src="photos/su.jpg" alt="" onerror="this.remove()"></div>
+  <div class="person-body">
+    <h3>Prof. Li Su</h3>
+    <div class="affil">University of Cambridge · University of Sheffield</div>
+    <span class="role">Honorary Chair</span>
+    <p class="bio">Joint Professor in the Department of Psychiatry, Cambridge, and Chair of Neuroimaging at the Sheffield Institute for Translational Neuroscience. Leads the Artificial Intelligence and Computational Neuroscience Group, combining computational methods with state-of-the-art brain imaging (MEG/EEG, 7T MRI, PET) to understand neurological and psychiatric conditions. Senior Fellow of Alzheimer&rsquo;s Research UK and member of the NICE Specialist Committee.</p>
+    <span class="read-more">Visit personal website</span>
+  </div>
+</a>
+
+      <a class="person" href="https://www.ndcn.ox.ac.uk/team/wenqianglong-li" target="_blank" rel="noopener">
+  <span class="ext-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+  <div class="photo-wrap g2"><img src="photos/li.jpg" alt="" onerror="this.remove()"></div>
+  <div class="person-body">
+    <h3>Dr. Wenqianglong Li (Ayden Lee)</h3>
+    <div class="affil">Nuffield Department of Clinical Neurosciences, Oxford</div>
+    <span class="role">Organising Chair</span>
+    <p class="bio">Postdoctoral research scientist at Oxford with a PhD in Molecular Psychiatry from UCL. Investigates the genetic risks associated with neuropathic pain and their overlaps with psychiatric disorders, leveraging DOLORisk, UK Biobank and the ABCD study to relate genetic variation to brain structure and function across diverse populations.</p>
+    <span class="read-more">Visit personal website</span>
+  </div>
+</a>
+
+      <a class="person" href="https://www.ndcn.ox.ac.uk/team/pao-sheng-chang" target="_blank" rel="noopener">
+  <span class="ext-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+  <div class="photo-wrap g3"><img src="photos/chang.jpg" alt="" onerror="this.remove()"></div>
+  <div class="person-body">
+    <h3>Dr. Pao-Sheng (Paul) Chang</h3>
+    <div class="affil">Nuffield Department of Clinical Neurosciences, Oxford</div>
+    <span class="role">Organising Chair</span>
+    <p class="bio">Guarantors of Brain Postdoctoral Fellow at Oxford studying neuro-immune interactions in human neuropathic pain. Develops cell-culture models of glucocorticoid-induced macrophage subpopulations with the goal of designing macrophage-targeted therapies for peripheral neuropathies.</p>
+    <span class="read-more">Visit personal website</span>
+  </div>
+</a>
+    </div>
+
+    <h3 class="sub-h">Co-Chairs</h3>
+    <div class="people-grid">
+      <a class="person" href="https://www.surrey.ac.uk/people/di-fu" target="_blank" rel="noopener">
+  <span class="ext-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+  <div class="photo-wrap g4"><img src="photos/fu.jpg" alt="" onerror="this.remove()"></div>
+  <div class="person-body">
+    <h3>Dr. Di Fu</h3>
+    <div class="affil">School of Psychology &amp; Surrey Institute for People-Centred AI, University of Surrey</div>
+    <span class="role">Co-Chair</span>
+    <p class="bio">Assistant Professor at Surrey directing the Digital Intelligence for Future Users (DIFU) Lab. Holds a fast-tracked PhD in cognitive neuroscience from the Chinese Academy of Sciences and was previously a postdoctoral associate in Informatics at the University of Hamburg. Researches crossmodal learning, human&ndash;robot social interaction, and empathic AI assistants for mental-health contexts.</p>
+    <span class="read-more">Visit personal website</span>
+  </div>
+</a>
+
+      <a class="person" href="https://www.tue.nl/en/research/researchers/chao-zhang" target="_blank" rel="noopener">
+  <span class="ext-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+  <div class="photo-wrap g5"><img src="photos/zhang.jpg" alt="" onerror="this.remove()"></div>
+  <div class="person-body">
+    <h3>Dr. Chao Zhang</h3>
+    <div class="affil">Industrial Engineering &amp; Innovation Sciences, Eindhoven University of Technology</div>
+    <span class="role">Co-Chair</span>
+    <p class="bio">Assistant Professor in Human-Centred AI in the Human-Technology Interaction group at TU/e. Combines machine learning and computational modelling with psychological theory to study behaviour change, and the social characteristics of AI-driven systems and how they shape human perception and decision-making.</p>
+    <span class="read-more">Visit personal website</span>
+  </div>
+</a>
+
+      <a class="person" href="https://www.guylaban.com/" target="_blank" rel="noopener">
+  <span class="ext-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+  <div class="photo-wrap g6"><img src="photos/laban.jpg" alt="" onerror="this.remove()"></div>
+  <div class="person-body">
+    <h3>Dr. Guy Laban</h3>
+    <div class="affil">Industrial Engineering &amp; Management, Ben-Gurion University of the Negev</div>
+    <span class="role">Co-Chair</span>
+    <p class="bio">Assistant Professor at BGU. PhD in brain sciences from the University of Glasgow as a Marie Curie Fellow, with postdoctoral research in Cambridge&rsquo;s Department of Computer Science &amp; Technology. Bridges computer science with cognitive and behavioural sciences, studying how people communicate emotions with social robots and chatbots &mdash; and how these agents can support mental health, reduce loneliness and improve emotion regulation.</p>
+    <span class="read-more">Visit personal website</span>
+  </div>
+</a>
+    </div>
+
+    <h3 class="sub-h sub-h-lg">Organizing Committee</h3>
+    <div class="org-list">
+      <a class="org-mini" href="https://www.lboro.ac.uk/departments/compsci/staff/yue-xie/" target="_blank" rel="noopener"><div class="avatar g1"><img src="photos/xie.jpg" alt="" onerror="this.remove()"></div><div><h4>Dr. Yue Xie</h4><p>Loughborough University</p></div></a>
+      <a class="org-mini" href="https://www.surrey.ac.uk/people/oscar-ferrante" target="_blank" rel="noopener"><div class="avatar g2"><img src="photos/ferrante.jpg" alt="" onerror="this.remove()"></div><div><h4>Dr. Oscar Ferrante</h4><p>University of Surrey</p></div></a>
+      <a class="org-mini" href="https://www.gla.ac.uk/schools/psychologyneuroscience/staff/chenzhou/" target="_blank" rel="noopener"><div class="avatar g3"><img src="photos/zhou.jpg" alt="" onerror="this.remove()"></div><div><h4>Dr. Chen Zhou</h4><p>University of Glasgow</p></div></a>
+      <a class="org-mini" href="https://sheffield.ac.uk/cs/people/academic/chaona-chen" target="_blank" rel="noopener"><div class="avatar g4"><img src="photos/chen.jpg" alt="" onerror="this.remove()"></div><div><h4>Dr. Chaona Chen</h4><p>University of Sheffield</p></div></a>
+      <a class="org-mini" href="https://researchportal.bath.ac.uk/en/persons/gang-li/" target="_blank" rel="noopener"><div class="avatar g5 no-photo"><img src="photos/gangli.jpg" alt="" onerror="this.remove()"></div><div><h4>Dr. Gang Li</h4><p>University of Bath</p></div></a>
+      <a class="org-mini" href="https://www.psy.ox.ac.uk/people/deng-pan" target="_blank" rel="noopener"><div class="avatar g6"><img src="photos/pan.jpg" alt="" onerror="this.remove()"></div><div><h4>Deng Pan</h4><p>University of Oxford</p></div></a>
+      <a class="org-mini" href="https://www.gla.ac.uk/schools/psychologyneuroscience/staff/yueningyan/" target="_blank" rel="noopener"><div class="avatar g7"><img src="photos/yan.jpg" alt="" onerror="this.remove()"></div><div><h4>Dr. Yuening Yan</h4><p>University of Glasgow</p></div></a>
+      <a class="org-mini" href="https://www.crick.ac.uk/research/find-a-researcher/jian-wang" target="_blank" rel="noopener"><div class="avatar g8"><img src="photos/jianwang.jpg" alt="" onerror="this.remove()"></div><div><h4>Dr. Jian Wang</h4><p>The Francis Crick Institute</p></div></a>
+    </div>
+  </div>
+</section>
+
+<section id="schedule">
+  <div class="container">
+    <span class="eyebrow">Programme</span>
+    <h2 class="section-title">Two days at the Newman Rooms</h2>
+    <p class="section-lede">
+      All times are GMT (London). Two full days of keynotes, panels and contributed talks at the Newman Rooms.
+    </p>
+
+    <div class="schedule">
+      <div class="day-card">
+        <span class="day-label">Day 1</span>
+        <h3>Foundations &amp; Frontiers</h3>
+        <p class="day-date">Thursday, 25 June 2026</p>
+
+        <div class="session"><div class="time">08:30</div><div class="what">Registration<em>08:30 – 09:30 · Newman Rooms foyer</em></div></div>
+        <div class="session"><div class="time">09:30</div><div class="what">Welcome<em>09:30 – 09:50 · Organising Chairs</em></div></div>
+        <div class="session keynote"><div class="time">09:50</div><div class="what"><strong>Keynote 1 · Prof. Roi Cohen Kadosh</strong><em>09:50 – 10:50 · Beyond Explanation: Engineering Cognition through AI and Neurostimulation</em></div></div>
+        <div class="session"><div class="time">10:50</div><div class="what">Coffee break<em>10:50 – 11:05</em></div></div>
+        <div class="session keynote"><div class="time">11:05</div><div class="what"><strong>Keynote 2 · Dr. Ilyena Hirskyj-Douglas</strong><em>11:05 – 12:05 · Opportunities and pitfalls in animal-computing for cognitive science</em></div></div>
+        <div class="session"><div class="time">12:05</div><div class="what">Lunch &amp; poster session<em>12:05 – 13:30</em></div></div>
+        <div class="session keynote"><div class="time">13:30</div><div class="what"><strong>Keynote 3 · Dr. Max Birk</strong><em>13:30 – 14:30 · Title to be confirmed</em></div></div>
+        <div class="session keynote"><div class="time">14:30</div><div class="what"><strong>Keynote 4 · Dr. Letizia Gionfrida</strong><em>14:30 – 15:30 · Human-in-the-Loop Optimization for HRI</em></div></div>
+        <div class="session"><div class="time">15:30</div><div class="what">Coffee break<em>15:30 – 15:45</em></div></div>
+        <div class="session panel"><div class="time">15:45</div><div class="what"><strong>ERC Grantee Panel</strong><em>15:45 – 16:45 · Cohen Kadosh · Makin · Hirskyj-Douglas · Birk</em></div></div>
+        <div class="session"><div class="time">16:45</div><div class="what">Oral Presentation 1<em>16:45 – 17:45 · Contributed talks</em></div></div>
+        <div class="session"><div class="time">17:45</div><div class="what">Coffee break<em>17:45 – 18:00</em></div></div>
+        <div class="session"><div class="time">18:00</div><div class="what">Oral Presentation 2<em>18:00 – 19:00 · Contributed talks</em></div></div>
+        <div class="session"><div class="time">19:00</div><div class="what">Reception<em>19:00 – 20:00</em></div></div>
+        <div class="session dinner"><div class="time">20:00</div><div class="what"><strong>Formal conference dinner</strong><em>20:00 – 21:30 · Booking opens soon</em></div></div>
+      </div>
+
+      <div class="day-card">
+        <span class="day-label">Day 2</span>
+        <h3>Translation &amp; Discovery</h3>
+        <p class="day-date">Friday, 26 June 2026</p>
+
+        <div class="session"><div class="time">08:30</div><div class="what">Registration<em>08:30 – 09:30</em></div></div>
+        <div class="session keynote"><div class="time">09:30</div><div class="what"><strong>Keynote 5 · Prof. Tony Prescott</strong><em>09:30 – 10:30 · Title to be confirmed</em></div></div>
+        <div class="session"><div class="time">10:30</div><div class="what">Coffee break<em>10:30 – 10:45</em></div></div>
+        <div class="session keynote"><div class="time">10:45</div><div class="what"><strong>Keynote 6 · Prof. Tamar Makin</strong><em>10:45 – 11:45 · Homo Cyberneticus: Neurocognitive embodiment of artificial limbs</em></div></div>
+        <div class="session"><div class="time">11:45</div><div class="what">Lunch &amp; poster session<em>11:45 – 13:00</em></div></div>
+        <div class="session keynote"><div class="time">13:00</div><div class="what"><strong>Keynote 7 · Dr. Georgios Baskozos</strong><em>13:00 – 14:00 · Multi-omics integration and statistical modelling for chronic pain and neuropathy</em></div></div>
+        <div class="session keynote"><div class="time">14:00</div><div class="what"><strong>Keynote 8 · Lewis Hotchkiss</strong><em>14:00 – 15:00 · Title to be confirmed</em></div></div>
+        <div class="session"><div class="time">15:00</div><div class="what">Coffee break<em>15:00 – 15:45</em></div></div>
+        <div class="session panel"><div class="time">15:45</div><div class="what"><strong>Journal Editor Panel</strong><em>15:45 – 16:45 · Venema · Horder · Howells</em></div></div>
+        <div class="session"><div class="time">16:45</div><div class="what">Oral Presentation 3<em>16:45 – 17:45 · Contributed talks</em></div></div>
+        <div class="session"><div class="time">17:45</div><div class="what"><strong>Award &amp; Farewell</strong><em>17:45 – 18:00</em></div></div>
+      </div>
+    </div>
+    <p style="margin-top:18px;color:var(--muted);font-size:13.5px"><em>Programme subject to change. Times in GMT (London); CET = +1h, China Standard Time = +8h.</em></p>
+  </div>
+</section>
+
+
+<section id="registration">
+  <div class="container">
+    <span class="eyebrow">Registration</span>
+    <h2 class="section-title">Two-tier fees with online and in-person options</h2>
+    <p class="section-lede">
+      Registration for EIF CogAI 2026 is now open. The early-bird window runs until <strong>10 June 2026 (23:59 BST)</strong>; standard fees apply after that through to the conference. Walk-up registrations are accepted at the venue. The booking link will be activated shortly.
+    </p>
+
+    <div class="fees-wrap">
+      <div class="fees-tabs">
+        <button class="fees-tab active" data-tab="early" type="button">Early bird · until 10 Jun</button>
+        <button class="fees-tab" data-tab="standard" type="button">Standard · until 26 Jun</button>
+      </div>
+
+      <div class="fees-pane active" data-pane="early">
+        <div class="fees-grid">
+          <div class="fees-card">
+            <h4>In-person</h4>
+            <span class="when">Early bird</span>
+            <div class="fees-row"><span>Student</span><span class="price">£110</span></div>
+            <div class="fees-row"><span>Postdoc</span><span class="price">£150</span></div>
+            <div class="fees-row"><span>Faculty</span><span class="price">£190</span></div>
+            <div class="fees-row"><span>Industry</span><span class="price">£290</span></div>
+            <div class="fees-note">Formal dinner add-on: <strong>£63</strong> (incl. wine). First-come, first-served — closes 10 June 2026.</div>
+          </div>
+          <div class="fees-card">
+            <h4>Online</h4>
+            <span class="when">Early bird</span>
+            <div class="fees-row"><span>Student</span><span class="price">£55</span></div>
+            <div class="fees-row"><span>Postdoc</span><span class="price">£75</span></div>
+            <div class="fees-row"><span>Faculty</span><span class="price">£95</span></div>
+            <div class="fees-row"><span>Industry</span><span class="price">£145</span></div>
+            <div class="fees-note">Hybrid attendance via livestream and remote Q&amp;A. No formal-dinner option for online tickets.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fees-pane" data-pane="standard">
+        <div class="fees-grid">
+          <div class="fees-card">
+            <h4>In-person</h4>
+            <span class="when">Standard</span>
+            <div class="fees-row"><span>Student</span><span class="price">£160</span></div>
+            <div class="fees-row"><span>Postdoc</span><span class="price">£200</span></div>
+            <div class="fees-row"><span>Faculty</span><span class="price">£240</span></div>
+            <div class="fees-row"><span>Industry</span><span class="price">£340</span></div>
+            <div class="fees-note">Standard fees apply from 11 June 2026. Walk-up tickets accepted through 26 June at the Newman Rooms.</div>
+          </div>
+          <div class="fees-card">
+            <h4>Online</h4>
+            <span class="when">Standard</span>
+            <div class="fees-row"><span>Student</span><span class="price">£105</span></div>
+            <div class="fees-row"><span>Postdoc</span><span class="price">£125</span></div>
+            <div class="fees-row"><span>Faculty</span><span class="price">£145</span></div>
+            <div class="fees-row"><span>Industry</span><span class="price">£195</span></div>
+            <div class="fees-note">Online registration accepted through 26 June 2026.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p style="margin-top:24px;color:var(--muted);font-size:13.5px">
+      <strong style="color:var(--oxford)">Registration contacts:</strong>
+      Dr Jian Wang &middot; <a href="mailto:jian.wang@crick.ac.uk">jian.wang@crick.ac.uk</a>
+      &nbsp;&middot;&nbsp;
+      Dr Yue Xie &middot; <a href="mailto:y.xie4@lboro.ac.uk">y.xie4@lboro.ac.uk</a>
+      &nbsp;&middot;&nbsp;
+      General enquiries &middot; Dr Chao Zhang &middot; <a href="mailto:c.zhang.5@tue.nl">c.zhang.5@tue.nl</a>
+    </p>
+  </div>
+</section>
+
+
+<section id="submit">
+  <div class="container">
+    <div class="strip">
+      <div style="position:relative;z-index:1">
+        <span style="display:inline-block;font-size:12px;text-transform:uppercase;letter-spacing:.18em;color:var(--gold-soft);font-weight:600;margin-bottom:10px">Call for abstracts</span>
+        <h3>Share your work in Oxford this June</h3>
+        <p style="margin-bottom:18px">We welcome peer-reviewed contributions across cognitive neuroscience, computational modelling, machine learning, robotics, HCI, and the philosophy of AI &mdash; both empirical work and methodology papers are in scope. In principle all eligible submissions will be accepted; outstanding work is invited for oral presentation (5&ndash;10 min) or poster.</p><div class="deadlines"><div class="deadline-pill"><span class="d-lbl">Submission deadline</span><span class="d-val">27 May 2026</span></div><div class="deadline-pill"><span class="d-lbl">Notifications</span><span class="d-val">9 June 2026</span></div><div class="deadline-pill"><span class="d-lbl">Final programme</span><span class="d-val">21 June 2026</span></div></div>
+        <div class="submit-btns">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSe6W0B7wccJA-fIohUAqv5oWJyibx682R0SwqbozmH0lmExQg/viewform" class="btn btn-primary" target="_blank" rel="noopener">
+            <span class="btn-stack"><span class="btn-main">Submit via Google Forms</span><span class="btn-sub">International &middot; English</span></span>
+          </a>
+          <a href="https://wj.qq.com/s2/26587150/5a36/" class="btn btn-ghost btn-alt" target="_blank" rel="noopener">
+            <span class="btn-stack"><span class="btn-main">通过腾讯问卷提交 / Submit via Tencent</span><span class="btn-sub">For participants in China</span></span>
+          </a>
+        </div>
+        <div class="topics">
+          <span class="topic">Cognitive neuroscience</span>
+          <span class="topic">Computational modelling</span>
+          <span class="topic">Machine learning</span>
+          <span class="topic">Human-robot interaction</span>
+          <span class="topic">Embodied cognition</span>
+          <span class="topic">Affective computing</span>
+          <span class="topic">Brain stimulation</span>
+          <span class="topic">Multi-omics &amp; AI</span>
+        </div>
+      </div>
+      <div class="strip-dates">
+        <div><div class="lbl">Abstracts</div><div class="val">Open now</div></div>
+        <div><div class="lbl">Notification</div><div class="val">Spring 2026</div></div>
+        <div><div class="lbl">Registration</div><div class="val">Coming soon</div></div>
+        <div><div class="lbl">Conference</div><div class="val">25–26 Jun 2026</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="submit-info">
+  <div class="container">
+    <div class="info-row">
+      <div class="info-block">
+        <span class="eyebrow">Submission requirements</span>
+        <h3>What to include in your abstract</h3>
+        <p>Abstracts must describe ongoing or completed work and follow the format below:</p>
+        <ul>
+          <li>Title</li>
+          <li>Authors and affiliations</li>
+          <li>Corresponding author with email</li>
+          <li>Keywords (maximum 6)</li>
+          <li>Abstract (maximum 400 words)</li>
+          <li>Preference: oral &amp; poster, or poster-only</li>
+        </ul>
+        <p>All abstracts undergo peer review. If you cannot attend in person, a pre-recorded video presentation is supported.</p>
+        <div class="contact-line">
+          <strong>Submission contacts:</strong><br>
+          Dr Guy Laban &middot; <a href="mailto:laban@bgu.ac.il">laban@bgu.ac.il</a><br>
+          Dr Chaona Chen &middot; <a href="mailto:chaona.chen@sheffield.ac.uk">chaona.chen@sheffield.ac.uk</a><br>
+          Dr Chao Zhang &middot; <a href="mailto:c.zhang.5@tue.nl">c.zhang.5@tue.nl</a>
+        </div>
+      </div>
+
+      <div class="info-block" id="visa">
+        <span class="eyebrow">Visa support</span>
+        <h3>Invitation letters for UK travel</h3>
+        <p>Official invitation letters are available to support visa applications for travel to the UK. We recommend applying as early as possible &mdash; processing times vary by country of residence.</p>
+        <p style="margin-top:14px"><strong style="color:var(--oxford)">Email <a href="mailto:c.zhang.5@tue.nl?subject=Visa%20Support%20Request">c.zhang.5@tue.nl</a></strong> with the subject line <em>&ldquo;Visa Support Request&rdquo;</em> and include:</p>
+        <ul>
+          <li>Full name (as on passport)</li>
+          <li>Date of birth</li>
+          <li>Nationality</li>
+          <li>Passport number</li>
+          <li>Current affiliation and position</li>
+          <li>Complete institution / university name</li>
+          <li>Arrival and departure dates</li>
+          <li>Presentation title (if presenting)</li>
+          <li>Participation type: presenter, attendee, or invited speaker</li>
+        </ul>
+        <div class="contact-line">
+          <strong>Visa coordinator:</strong> Dr Chao Zhang &middot; <a href="mailto:c.zhang.5@tue.nl">c.zhang.5@tue.nl</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="venue">
+  <div class="container">
+    <span class="eyebrow">Venue &amp; travel</span>
+    <h2 class="section-title">The Newman Rooms, University of Oxford</h2>
+    <p class="section-lede">
+      A historic Oxford venue a few minutes from the city centre, with full accessibility information available through the central University conference office.
+    </p>
+    <div class="venue">
+      <div class="venue-media">
+        <div class="venue-photos">
+          <div class="venue-photo">
+            <img src="photos/newman-exterior.jpg" alt="The Old Palace, Oxford — exterior of the Newman Rooms" />
+            <div class="caption">Exterior · The Old Palace</div>
+          </div>
+          <div class="venue-photo">
+            <img src="photos/newman.jpg" alt="The Newman Rooms — main hall set up for a conference" />
+            <div class="caption">Interior · main hall</div>
+          </div>
+        </div>
+        <div class="venue-map">
+          <iframe
+            src="https://www.google.com/maps?q=Newman+Rooms+Rose+Place+Oxford+OX1+1QQ&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Map showing The Newman Rooms, Rose Place, Oxford"></iframe>
+        </div>
+      </div>
+      <div class="venue-card">
+        <h3>Practical information</h3>
+        <ul>
+          <li><span>Address</span> <strong>Rose Place (off St Aldate's), Oxford OX1 1QQ, UK</strong></li>
+          <li><span>Format</span> <strong>Hybrid (in-person &amp; online)</strong></li>
+          <li><span>Accessibility</span> <strong><a href="https://www.conference-oxford.com/" target="_blank" rel="noopener">conference-oxford.com →</a></strong></li>
+          <li><span>Visa support</span> <strong>Available on request</strong></li>
+          <li><span>Nearest airport</span> <strong>London Heathrow (≈ 1 h)</strong></li>
+          <li><span>Train</span> <strong>Oxford station, 10 min walk</strong></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <h4>EIF CogAI 2026</h4>
+      <p style="font-size:14px;color:#c5cee0;max-width:42ch">2nd Exploring Interdisciplinary Frontiers — Cognitive Science, Computational Modeling, and Artificial Intelligence. Hosted at the University of Oxford, 25–26 June 2026.</p>
+    </div>
+    <div>
+      <h4>Programme</h4>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#keynotes">Keynote speakers</a></li>
+        <li><a href="#panels">Panels</a></li>
+        <li><a href="#organizers">Organizers</a></li>
+        <li><a href="#schedule">Schedule</a></li>
+        <li><a href="#registration">Registration</a></li>
+        <li><a href="#visa">Visa support</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Participate</h4>
+      <ul>
+        <li><a href="#submit">Submit an abstract</a></li>
+        <li><a href="#venue">Venue &amp; travel</a></li>
+        <li><a href="https://sites.google.com/view/eif-cogai-2026/home" target="_blank" rel="noopener">Original site ↗</a></li>
+        <li><a href="mailto:eif.cogai@gmail.com">eif.cogai@gmail.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bot">
+    <span>© 2026 EIF CogAI · University of Oxford</span>
+    <span>Designed for the EIF organising committee</span>
+  </div>
+</footer>
+
+<script>
+
+// Live-ish countdown to opening
+(function(){
+  const target = new Date('2026-06-25T09:00:00Z').getTime();
+  const numEl = document.querySelector('.countdown div:first-child .num');
+  if (!numEl) return;
+  function tick(){
+    const days = Math.max(0, Math.ceil((target - Date.now()) / 86400000));
+    numEl.textContent = days;
+  }
+  tick(); setInterval(tick, 60_000);
+})();
+</script>
+
+<!-- Speaker abstract modal (in-page) -->
+<div class="modal-backdrop" id="abstract-modal" role="dialog" aria-modal="true">
+  <div class="modal" role="document">
+    <button class="modal-close" aria-label="Close" onclick="closeAbstract()">&times;</button>
+    <div class="modal-hero">
+      <div class="modal-photo" id="m-photo"><img id="m-img" src="" alt=""></div>
+      <div class="modal-head">
+        <span class="role-tag" id="m-role"></span>
+        <h2 id="m-name"></h2>
+        <p class="modal-affil" id="m-affil"></p>
+      </div>
+    </div>
+    <div class="modal-body">
+      <p class="talk-title" id="m-talk"></p>
+      <div class="abstract-label">Abstract</div>
+      <p class="abstract" id="m-abstract"></p>
+      <p class="modal-bio" id="m-bio"></p>
+    </div>
+  </div>
+</div>
+<script>
+const __ABSTRACTS = {"roi-cohen-kadosh": {"name": "Prof. Roi Cohen Kadosh", "affil": "University of Surrey, UK", "role": "Keynote", "photo": "photos/cohen-kadosh.jpg", "talk": "Beyond Explanation: Engineering Cognition through AI and Neurostimulation", "abstract": "Psychology, neuroscience, and computational modelling have long sought to explain how the mind works. My research asks a more ambitious question: can we use that knowledge to change cognition in precise, personalised, and scalable ways? In this keynote, I will present a programme of work at the intersection of cognitive neuroscience, computational modelling, and artificial intelligence that aims to do exactly that. Focusing on non-invasive brain stimulation, I will show how we have moved beyond one-size-fits-all approaches towards AI-guided personalised intervention. By integrating behavioural, neural, and computational data, this work reveals why individuals differ in their response and how those differences can be harnessed to optimise human performance. I will argue that the next frontier is intelligent intervention: building models that not only explain cognition, but predict it, personalise it, and demonstrate that it can be improved.", "bio": "Cognitive neuroscientist and Head of the School of Psychology at Surrey. Pioneer of AI-driven personalisation of cognitive interventions including non-invasive brain stimulation. 200+ publications spanning learning, attention, and lifespan cognitive performance."}, "tamar-makin": {"name": "Prof. Tamar Makin", "affil": "University of Cambridge, UK", "role": "Keynote", "photo": "photos/makin.jpg", "talk": "Homo Cyberneticus: Neurocognitive embodiment of artificial limbs", "abstract": "To successfully design devices for the human body, engineers often view the body itself as the ideal design template. Similarly, for individuals missing a limb, the development of artificial prosthetic limbs often centers on embodiment as the goal: focusing device design and control on becoming more like our biological bodies. But neurocognitive resources might differ radically, depending on the user's life experiences and needs. Here I will present a series of studies where we investigated the neural basis of artificial limb use for both substitution and augmentation technologies. Collectively, these studies suggest that although, in principle, opportunities exist for harnessing hand neural and cognitive resources to control artificial limbs, alternative non-biomimetic approaches could be also well suited for successful human-device interface.", "bio": "Professor of Cognitive Neuroscience and head of the Plasticity Lab. Investigates how brain plasticity can be harnessed to enhance motor function, supported by the ERC, Wellcome Trust, and UK research councils."}, "ilyena-hirskyj-douglas": {"name": "Dr. Ilyena Hirskyj-Douglas", "affil": "University of Glasgow, UK", "role": "Keynote", "photo": "photos/hirskyj-douglas.jpg", "talk": "Opportunities and pitfalls in animal-computing for cognitive science", "abstract": "The tools we use to study animal cognition have largely been inherited from human-computer interactions, and yet how animals interact with computers is fundamentally different from human participants. When animals fail to comply, we tend to exclude them, preprocess the data, or accept the limitations rather than question whether the technology itself is the problem. In this talk, I will put forward that animal-centred computing offers cognitive science a different approach to designing technology around animals' own behaviour, physiology, and ecology. Drawing across my work, from lemurs to parrots, I will show how iterative, animal-centred design can improve research validity, but also surfaces new questions about cognition that top-down methods obscure. This offers us, as those who develop technology, a new lens and tools for understanding and interpreting non-human minds.", "bio": "Assistant Professor leading the Animal-Computer Interaction Group and ERC Starter Grant holder (FUTUREFAUNA). Builds technology that gives animals choice and agency over their own lives \u2014 featured in the New York Times and a Netflix documentary."}, "letizia-gionfrida": {"name": "Dr. Letizia Gionfrida", "affil": "King's College London, UK", "role": "Keynote", "photo": "photos/gionfrida.jpg", "talk": "Human-in-the-Loop Optimization for HRI", "abstract": "The next generation of assistive and wearable robotic systems requires a shift from task-driven automation towards human-in-the-loop intelligent interaction. In this talk, I will present recent work from the Vision in Human Robotics Lab on bio-inspired robotic systems that integrate multimodal human sensing, biomechanical modelling, predictive digital twins, and adaptive actuation to enable personalized and responsive human-machine interaction. By learning from visual perception and multimodal sensing, and through musculoskeletal models, our work aims to continuously capture human movement to understand physical behaviour, and individual adaptation in real-world environments. A key aspect of this research is the development of holistic predictive frameworks that study human-robot interaction not only from a control perspective, but also through the physical and biological dynamics underlying human motion and assistance. I will discuss how these approaches can support adaptive control architectures in which robotic behaviour emerges from biological principles and evolves in response to the user's state, intent, and functional needs. Overall, this work highlights the role of intelligent perception and bio-inspired design in creating more personalized, intuitive, and human-centred robotic systems.", "bio": "Assistant Professor leading the Vision in Human Robotics Lab. Royal Academy of Engineering Research Fellow and Philip Leverhulme Prize recipient, working at the intersection of bio-inspired robotics and human-centred AI."}, "tony-prescott": {"name": "Prof. Tony Prescott", "affil": "University of Sheffield, UK", "role": "Keynote", "photo": "photos/prescott.jpg", "talk": "Title to be confirmed", "abstract": "TBC", "bio": "Professor of Cognitive Robotics, internationally recognised for work bridging biological and artificial intelligence and for leading research on biomimetic robotics and embodied cognition."}, "max-birk": {"name": "Dr. Max Birk", "affil": "Eindhoven University of Technology, Netherlands", "role": "Keynote", "photo": "photos/birk.jpg", "talk": "Title to be confirmed", "abstract": "TBC", "bio": "Associate Professor of Human-Technology Interaction and ERC Starting Grant recipient (GAMECHAR). Combines psychology, interaction design, and game design to study motivation and behaviour change."}, "georgios-baskozos": {"name": "Dr. Georgios Baskozos", "affil": "University of Oxford, UK", "role": "Keynote", "photo": "photos/baskozos.jpg", "talk": "Multi-omics integration and statistical modelling to better understand chronic pain and neuropathy", "abstract": "Chronic pain is the leading cause of disability worldwide. Neuropathic pain, a particularly severe form of chronic pain, arising as a direct consequence of a lesion or disease affecting the somatosensory nervous system, affects up to 10% of the general population and has a distinct major negative impact on quality of life. A complex interplay of genetic factors and environmental exposures is likely to lead to the development of Neuropathic Pain but the potential causal effects and the relationship between psycho-social, clinical, demographic and molecular markers in this are not well understood. I will discuss bioinformatic approaches utilising multi-modal data integration and machine learning to identify composite molecular markers of neuropathic pain and core processes defining sensory phenotypes in neuropathy; to predict genes likely to be involved in chronic pain and to develop predictive and causal models of neuropathic pain. My vision is to develop composite molecular signatures through multi-omic integration and to estimate potential causal effects of these signatures in a holistic inference framework alongside socio-economic, demographical, lifestyle, clinical factors and psychological comorbidities.", "bio": "Bioinformatician and Associate Professor in the Nuffield Department of Clinical Neurosciences. Develops omics-data pipelines focused on the molecular mechanisms of neuropathic pain."}, "lewis-hotchkiss": {"name": "Lewis Hotchkiss", "affil": "Swansea University, UK", "role": "Keynote", "photo": "photos/hotchkiss.jpg", "talk": "Title to be confirmed", "abstract": "TBC", "bio": "Research Officer at the Dementias Platform UK Data Portal and PhD candidate in Population Data Science at Swansea, building AI models for differential diagnosis of dementia subtypes from neuroimaging data and exploring 3D MRI synthetic data."}, "liesbeth-venema": {"name": "Dr. Liesbeth Venema", "affil": "Chief Editor, Nature Machine Intelligence", "role": "Editor Panel", "photo": "photos/venema.jpg", "talk": "Journal Editor Panel", "abstract": "TBC", "bio": "PhD in applied physics from Delft. Joined Nature in 2000 and has focused on AI research since 2017, shaping one of the most read journals in the field."}, "jamie-horder": {"name": "Dr. Jamie Horder", "affil": "Senior Editor, Nature Human Behaviour", "role": "Editor Panel", "photo": "photos/horder.jpg", "talk": "Journal Editor Panel", "abstract": "TBC", "bio": "Cognitive neuroscientist by training \u2014 Oxford PhD on depression, postdoctoral work on autism at King's College London \u2014 now commissioning behavioural-science research at Nature."}, "henrietta-howells": {"name": "Dr. Henrietta Howells", "affil": "Senior Editor, Nature Neuroscience", "role": "Editor Panel", "photo": "photos/howells.jpg", "talk": "Journal Editor Panel", "abstract": "TBC", "bio": "PhD in neuroimaging from King's College London with postdoctoral research at the University of Milan combining neuroimaging and brain stimulation."}, "roi-cohen-kadosh-erc": {"name": "Prof. Roi Cohen Kadosh", "affil": "University of Surrey", "role": "ERC StG \u00b7 Advanced Grant Panel Chair", "photo": "photos/cohen-kadosh.jpg", "talk": "European Research Council Grantee Panel", "abstract": "Has held both an ERC Starting Grant and chaired ERC Advanced Grant panels \u2014 speaks to the full lifecycle of EU-funded careers.", "bio": "Cognitive neuroscientist and Head of the School of Psychology at Surrey. Pioneer of AI-driven personalisation of cognitive interventions including non-invasive brain stimulation. 200+ publications spanning learning, attention, and lifespan cognitive performance."}, "tamar-makin-erc": {"name": "Prof. Tamar Makin", "affil": "Plasticity Lab, Cambridge", "role": "ERC StG / Consolidator Grantee", "photo": "photos/makin.jpg", "talk": "European Research Council Grantee Panel", "abstract": "Multiple ERC awards across career stages. Will share lessons on framing high-risk, high-gain proposals on plasticity and embodiment.", "bio": "Professor of Cognitive Neuroscience and head of the Plasticity Lab. Investigates how brain plasticity can be harnessed to enhance motor function, supported by the ERC, Wellcome Trust, and UK research councils."}, "ilyena-hirskyj-douglas-erc": {"name": "Dr. Ilyena Hirskyj-Douglas", "affil": "School of Computing, Glasgow", "role": "ERC Starting Grant Holder", "photo": "photos/hirskyj-douglas.jpg", "talk": "European Research Council Grantee Panel", "abstract": "Recent ERC Starting Grant recipient (FUTUREFAUNA). Will discuss writing competitive proposals from a new and unconventional research area.", "bio": "Assistant Professor leading the Animal-Computer Interaction Group and ERC Starter Grant holder (FUTUREFAUNA). Builds technology that gives animals choice and agency over their own lives \u2014 featured in the New York Times and a Netflix documentary."}, "max-birk-erc": {"name": "Dr. Max Birk", "affil": "Eindhoven University of Technology", "role": "ERC Starting Grant Holder", "photo": "photos/birk.jpg", "talk": "European Research Council Grantee Panel", "abstract": "ERC StG recipient (GAMECHAR). Brings the perspective of a Dutch host institution and human\u2013technology interaction framing.", "bio": "Associate Professor of Human-Technology Interaction and ERC Starting Grant recipient (GAMECHAR). Combines psychology, interaction design, and game design to study motivation and behaviour change."}};
+function openAbstract(slug){
+  const d=__ABSTRACTS[slug];if(!d)return;
+  const mb=document.getElementById('abstract-modal');
+  const photo=document.getElementById('m-photo');
+  const img=document.getElementById('m-img');
+  if(d.photo){
+    img.src=d.photo;img.style.display='';photo.classList.remove('no-photo');
+    img.onerror=()=>{img.style.display='none';photo.classList.add('no-photo');};
+  } else {img.style.display='none';photo.classList.add('no-photo');}
+  document.getElementById('m-role').textContent=d.role||'';
+  document.getElementById('m-name').textContent=d.name||'';
+  document.getElementById('m-affil').textContent=d.affil||'';
+  document.getElementById('m-talk').textContent=d.talk||'';
+  const ab=document.getElementById('m-abstract');
+  if(d.abstract && d.abstract.trim()!=='TBC'){ab.textContent=d.abstract;ab.classList.remove('tbc');}
+  else{ab.textContent='Abstract to be confirmed.';ab.classList.add('tbc');}
+  document.getElementById('m-bio').textContent=d.bio||'';
+  mb.classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeAbstract(){
+  document.getElementById('abstract-modal').classList.remove('open');
+  document.body.style.overflow='';
+  if(history.state && history.state.modal){history.back();}
+}
+document.addEventListener('click',e=>{
+  const a=e.target.closest('a.person[data-abstract]');
+  if(a){e.preventDefault();openAbstract(a.dataset.abstract);history.pushState({modal:true},'','#abstract-'+a.dataset.abstract);}
+  if(e.target.classList.contains('modal-backdrop')){closeAbstract();}
+});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeAbstract();});
+window.addEventListener('popstate',()=>{document.getElementById('abstract-modal').classList.remove('open');document.body.style.overflow='';});
+// Open modal if URL has abstract hash on load
+window.addEventListener('DOMContentLoaded',()=>{
+  const m=location.hash.match(/^#abstract-(.+)$/);if(m && __ABSTRACTS[m[1]])openAbstract(m[1]);
+});
+</script>
+
+
+<script>
+document.addEventListener('click',e=>{
+  const t=e.target.closest('.fees-tab');if(!t)return;
+  document.querySelectorAll('.fees-tab').forEach(x=>x.classList.toggle('active',x===t));
+  const key=t.dataset.tab;
+  document.querySelectorAll('.fees-pane').forEach(p=>p.classList.toggle('active',p.dataset.pane===key));
+});
+</script>
+
+</body>
+</html>

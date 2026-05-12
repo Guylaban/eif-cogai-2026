@@ -1,0 +1,10 @@
+# Workspace / local-only
+.claude/
+_*.html
+_*.py
+_check/
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
