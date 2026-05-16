@@ -552,6 +552,17 @@ section{padding:90px 24px;scroll-margin-top:80px}
 
 
 /* Registration fees table */
+/* Social events */
+#social{background:var(--off)}
+.social-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:32px}
+.social-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:32px 28px}
+.social-icon{font-size:2.2rem;margin-bottom:14px}
+.social-card h3{font-size:1.25rem;margin-bottom:6px;color:var(--oxford)}
+.social-meta{font-size:13px;color:var(--muted);margin-bottom:14px;font-style:italic}
+.social-card ul{padding-left:18px;margin:10px 0;color:var(--ink);font-size:14.5px;line-height:1.7}
+.social-contact{margin-top:18px;font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:14px}
+.social-contact a{color:var(--oxford)}
+@media(max-width:640px){.social-grid{grid-template-columns:1fr}}
 .fees-wrap{margin-top:30px}
 .fees-tabs{display:flex;gap:8px;margin-bottom:18px;flex-wrap:wrap}
 .fees-tab{
@@ -655,6 +666,7 @@ footer li{padding:5px 0;font-size:14px}
       <a href="#panels">Panels</a>
       <a href="#organizers">Organizers</a>
       <a href="#schedule">Schedule</a>
+      <a href="#social">Social</a>
       <a href="#registration">Registration</a>
       <a href="#contributors">Institutions</a>
       <a href="#venue">Venue</a>
@@ -1094,7 +1106,7 @@ footer li{padding:5px 0;font-size:14px}
         <div class="session"><div class="time">17:45</div><div class="what">Coffee break<em>17:45 – 18:00</em></div></div>
         <div class="session"><div class="time">18:00</div><div class="what">Oral Presentation 2<em>18:00 – 19:00 · Contributed talks</em></div></div>
         <div class="session"><div class="time">19:00</div><div class="what">Reception<em>19:00 – 20:00</em></div></div>
-        <div class="session dinner"><div class="time">20:00</div><div class="what"><strong>Formal conference dinner</strong><em>20:00 – 21:30 · Booking opens soon</em></div></div>
+        <div class="session dinner"><div class="time">20:00</div><div class="what"><strong>Formal conference dinner</strong><em>20:00 – 21:30 · £63 incl. wine · Limited to 120 places</em></div></div>
       </div>
 
       <div class="day-card">
@@ -1116,6 +1128,41 @@ footer li{padding:5px 0;font-size:14px}
       </div>
     </div>
     <p style="margin-top:18px;color:var(--muted);font-size:13.5px"><em>Programme subject to change. Times in GMT (London); CET = +1h, China Standard Time = +8h.</em></p>
+  </div>
+</section>
+
+
+<section id="social">
+  <div class="container">
+    <span class="eyebrow">Social Events</span>
+    <h2 class="section-title">Oxford beyond the lecture hall</h2>
+    <p class="section-lede">The conference includes plenty of opportunities to socialise and network across the two days. Two dedicated social events are organised alongside the main programme.</p>
+
+    <div class="social-grid">
+
+      <div class="social-card">
+        <div class="social-icon">🍷</div>
+        <h3>Formal Conference Dinner</h3>
+        <p class="social-meta">Thursday 25 June · 20:00 – 21:30 · Venue to be announced</p>
+        <p>Join fellow attendees for a formal dinner with wine following the first day's programme. Places are strictly limited to 120 and allocated on a first-come, first-served basis — book early to avoid disappointment.</p>
+        <ul>
+          <li>Price: <strong>£63</strong> per person (wine included)</li>
+          <li>Booking closes: <strong>10 June 2026</strong></li>
+          <li>Add-on during registration via Oxford University Stores</li>
+        </ul>
+        <p class="social-contact">Contact: Dr Pao-Sheng (Paul) Chang · <a href="mailto:pao-sheng.chang@ndcn.ox.ac.uk">pao-sheng.chang@ndcn.ox.ac.uk</a></p>
+      </div>
+
+      <div class="social-card">
+        <div class="social-icon">🚣</div>
+        <h3>Punting on the Cherwell</h3>
+        <p class="social-meta">Saturday 27 June · Morning · River Cherwell, Oxford</p>
+        <p>Round off the conference weekend with a relaxed punting session on the River Cherwell — one of Oxford's most iconic experiences. Glide past the Botanic Garden and Christ Church Meadow in good company.</p>
+        <p style="margin-top:10px">Further details and sign-up information will be shared closer to the date.</p>
+        <p class="social-contact">Contact: Dr Pao-Sheng (Paul) Chang · <a href="mailto:pao-sheng.chang@ndcn.ox.ac.uk">pao-sheng.chang@ndcn.ox.ac.uk</a></p>
+      </div>
+
+    </div>
   </div>
 </section>
 
@@ -1345,6 +1392,7 @@ footer li{padding:5px 0;font-size:14px}
         <li><a href="#panels">Panels</a></li>
         <li><a href="#organizers">Organizers</a></li>
         <li><a href="#schedule">Schedule</a></li>
+        <li><a href="#social">Social events</a></li>
         <li><a href="#registration">Registration</a></li>
         <li><a href="#visa">Visa support</a></li>
       </ul>
